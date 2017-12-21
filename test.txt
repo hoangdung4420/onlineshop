@@ -1,10 +1,2 @@
 bcd
 
-branch dung-01
-
-<<<<<<< HEAD
-bcd
-
-nbvvv
-=======
->>>>>>> fd7ee9e620cfe84f370b8612b6637cf18094e072
