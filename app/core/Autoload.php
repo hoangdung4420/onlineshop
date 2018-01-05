@@ -4,14 +4,15 @@
 		private $rootDir;
 		function __construct($rootDir){
 			$this->rootDir = $rootDir;
+		
 			spl_autoload_register([$this,'autoLoad']);
 			$this->autoLoadFile();
 		}
 		private function autoLoad($class){
-
 			$ar = explode('\\', $class);
+			
 			$count = count($ar);
-
+			
 			$fileName = $ar[$count-1];
 			
 			$filePath = $this->rootDir.'\\'.strtolower(str_replace($fileName, '', $class)).$fileName.'.php';
@@ -25,7 +26,6 @@
 
 		private function autoLoadFile(){
 			foreach( $this->defaulFileLoad() as $file ){
-				$this->rootDir .'/'.$file;
 				require_once( $this->rootDir .'/'.$file );
 			}
 		}

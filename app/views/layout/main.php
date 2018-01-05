@@ -49,7 +49,10 @@
 		</nav>
 		<div class="row">
 			<div class="col-sm-4">
-				<?php $this->renderPartier('layout/sidebar',['title'=>'Danh mục sách']); ?>
+				<?php //$this->renderPartier('layout/sidebar');
+					require_once 'sidebar.php';
+				?>
+
 			</div>
 			<div class="col-sm-8">
 				<?php echo $content; ?>

@@ -2,7 +2,7 @@
 namespace app\core;
 use App;
 /**
-* 
+*  
 */
 class Controller
 {

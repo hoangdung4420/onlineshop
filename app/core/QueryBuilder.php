@@ -2,6 +2,9 @@
 namespace app\core;
 use \PDO;
 use \PDOException;
+
+use App;
+
 /**
 * 
 */
@@ -18,9 +21,29 @@ class QueryBuilder
 	private $orders;
 	private $limit;
 	private $offset;
+	private $conn;
 	function __construct($tableName)
 	{
 		 $this->from = $tableName;
+
+	 	$servername = App::getConfig()['database']["servername"];
+		$database = App::getConfig()['database']["database"];
+		$username = App::getConfig()['database']["username"];
+		$password = App::getConfig()['database']["password"];
+		
+		try {
+		    $this->conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+		    $this->conn->exec("set names utf8");
+		    // set the PDO error mode to exception
+		    $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		    //echo "Connection ok: " ;
+
+		    }
+		catch(PDOException $e)
+		    {
+		    echo "Connection failed: " . $e->getMessage();
+		    }
+
 
 	}
 
@@ -146,7 +169,40 @@ class QueryBuilder
 		if(isset($this->offset)){
 			$sql .= " OFFSET $this->offset";
 		}
-		//echo $sql;
 
+		return  $this->selects($sql);
+		
 	}
+
+	public function inserts($sql){
+		
+		return  $this->conn->exec($sql);
+	}
+
+	public function updates($sql){
+	   $stm = $this->conn->prepare($sql);
+	    return  $stm->execute();
+	}
+
+	public function selects($sql)
+	{
+		$result = $this->conn->query($sql);
+		if ($result->rowCount() > 0) {
+			
+		    while($row = $result->fetch()) {
+		        $ar[] = $row;
+		    }
+		   
+		} else {
+		    $ar =null;
+		}
+
+		return $ar;
+	}
+
+	public function deletes($sql)
+	{
+		return  $this->conn->exec($sql);
+	}
+
 }
