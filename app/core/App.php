@@ -3,7 +3,6 @@
 /**
 * App
 */
-
 require_once (dirname(__FILE__).'/Autoload.php');
 class App
 {
@@ -13,7 +12,7 @@ class App
 	public static $action;
 
 	function __construct()
-	{
+	{ 
 		new Autoload(self::$config['rootDir']);
 		$this->router = new Router(self::$config['basePath']);
 		
@@ -23,7 +22,10 @@ class App
 	{
 		self::$config = $config;
 	}
-
+	public static function ket()
+	{
+		return 'sa';
+	}
 	public static function getConfig()
 	{
 		return self::$config;

@@ -2,7 +2,10 @@
 	namespace app\controllers;
 	use app\core\Controller;
 	use app\core\QueryBuilder;
-	use \App;
+	use app\models\About;
+	use app\models\Category;
+	use app\models\Book;
+	
 	/**
 	* HomeController
 	*/
@@ -16,15 +19,30 @@
 
 		function index()
 		{
-			//$array = ['a'=>1,'b'=>2,'c'=>3];
-			$builder=QueryBuilder::table('bang1')->select('id','name')->distinct()->join('bang2','bang1.id','=','bang2.id')->orwhere('cot1','=',20)->where('cot2','=',20)->groupBy('cot1','cot2')->having('cot2','=',20)->having('cot2','=',20)->orderBy('cot2','DESC')->orderBy('cot2','DESC')->limit(10)->offset(5)->get();
+			$result = Book::getAll();
+			$cat = Category::getAll();
 
-			$this->render('index');
+			/*echo "<pre>";
+			print_r($cat);
+			die();*/
+			$this->render('index',['book'=>$result,'cat'=>$cat]);
+
+			/*$result=QueryBuilder::table('abouts')->select('id_about','title','detail')->get();*/
+			/*$sql="delete from abouts where id_about=12";
+			echo $re =QueryBuilder::table('abouts')->deletes($sql);*/
+		/*	$sql="update abouts set title='youtobeư' where id_about=9";
+			echo $re =QueryBuilder::table('abouts')->updates($sql);
+		*/
+			/*$sql="insert into abouts (title,detail) VALUES ('b','c')";
+			echo $re =QueryBuilder::table('abouts')->inserts($sql);*/
 
 		}
+
 		function getCat()
 		{
-			$this->render('cat.index');
+			$arCat =['a'];
+			new About;
+			$this->render('cat.index',$arCat);
 		}
 	}
 
