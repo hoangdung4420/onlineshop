@@ -5,7 +5,7 @@
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="logo-header">
                 <a href="#">
                     <div  id="logo-img">
-                        <img src="app/views/layout/img/icon/logo.svg">
+                        <img src="app/views/layout/assets/img/icon/logo.svg">
                     </div>
                     <div id="name-school">
                         <h3>Nhóm newbie <br> Bách Khoa Đà Nẵng</h3>

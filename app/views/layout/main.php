@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap-theme.min.css">
+	
     <?php
         require_once 'include/heap.php';
     ?>
