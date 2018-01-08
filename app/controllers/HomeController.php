@@ -36,10 +36,12 @@
 			/*$sql="insert into abouts (title,detail) VALUES ('b','c')";
 			echo $re =QueryBuilder::table('abouts')->inserts($sql);*/
 
-		}
+		} 
 
-		function getCat()
+		function getCat($id)
 		{
+			echo $id;
+			die();
 			$arCat =['a'];
 			new About;
 			$this->render('cat.index',$arCat);
