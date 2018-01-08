@@ -8,7 +8,8 @@ html{
 }
 body{
   background-color: #f1f1f1;
-  background-image: url("../img/background/backgroud.svg");
+  /*background-image: url("../img/background/backgroud.svg");*/
+  background-color: : #333;
   background-position: top center;
   background-size:cover ;
   background-repeat: no-repeat;
