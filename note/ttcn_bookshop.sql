@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 02, 2018 lúc 10:29 AM
+-- Thời gian đã tạo: Th1 08, 2018 lúc 12:13 PM
 -- Phiên bản máy phục vụ: 10.1.26-MariaDB
 -- Phiên bản PHP: 7.1.9
 
@@ -46,7 +46,9 @@ INSERT INTO `abouts` (`id_about`, `title`, `detail`) VALUES
 (5, 'google', 'https://www.google.com.vn/'),
 (6, 'facebook', 'https://vi-vn.facebook.com/'),
 (7, 'twitter', 'https://twitter.com/?lang=vi'),
-(9, 'youtobe', 'https://www.youtube.com/?gl=VN');
+(9, 'youtobeư', 'https://www.youtube.com/?gl=VN'),
+(13, 'b', 'c'),
+(14, 'b', 'c');
 
 -- --------------------------------------------------------
 
@@ -281,21 +283,19 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id_cat`, `name`, `parent_id`) VALUES
 (1, 'Kinh tế', 0),
-(2, 'Sách Makerting-Bán hàng', 1),
+(2, 'Makerting-Bán hàng', 1),
 (3, 'Văn học', 0),
 (4, 'Văn học nước ngoài', 3),
 (5, 'Truyện tranh', 0),
-(9, 'Tiểu thuyết tình cảm', 3),
+(9, 'Tiểu thuyết', 3),
 (10, 'Artbook', 0),
 (11, 'Sách quản trị, lãnh đạo', 1),
 (12, 'Sách tài chính, kế toán', 1),
 (13, 'Truyện kinh dị', 3),
 (14, 'Truyện trinh thám', 3),
 (15, 'Tiểu thuyết lịch sử', 3),
-(16, 'Sách giáo khoa', 0),
 (17, 'Truyện kiếm hiệp', 3),
 (18, 'Kỹ năng sống', 0),
-(19, 'ebook', 0),
 (20, 'Học tiếng anh', 0);
 
 -- --------------------------------------------------------
@@ -539,7 +539,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `abouts`
 --
 ALTER TABLE `abouts`
-  MODIFY `id_about` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_about` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `bills`
@@ -599,7 +599,7 @@ ALTER TABLE `status_bill`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
