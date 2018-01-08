@@ -50,9 +50,10 @@
 			$catChilds = Category::getCatChild();
 
 			$arCatBooks = Book::getCatBookAll($id);
-
-			$contact = About::getContact();
-			$this->render('cat',['arCatBooks'=>$arCatBooks,'catParents'=>$catParents, 'catChilds' => $catChilds,'contact' => $contact ]);
+			$oItem = Category::find($id);
+			
+			$contact = About::getContact($id);
+			$this->render('cat',['oItem'=>$oItem[0],'arCatBooks'=>$arCatBooks,'catParents'=>$catParents, 'catChilds' => $catChilds,'contact' => $contact ]);
 		}
 	}
 

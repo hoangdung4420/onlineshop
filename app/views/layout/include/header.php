@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2" id="time">
                 <div class="below_body">
-                    <div><?php echo date('d-m-Y') ?></div>
+                    <div>Hôm nay là: <?php echo date('d-m-Y') ?></div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-7 col-md-9 col-lg-9" id="welcome">
