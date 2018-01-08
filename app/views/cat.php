@@ -1,6 +1,6 @@
 <div class="panel panel-danger">
 	<div class="panel-heading">
-		<h3 class="panel-title"><span class="glyphicon glyphicon-book"></span> Sách mới</h3>
+		<h3 class="panel-title"><span class="glyphicon glyphicon-book"></span> <?php echo $data['oItem']['name']; ?></h3>
 	</div>
 	<div class="panel-body">
 		<?php 
