@@ -5,18 +5,18 @@
 	<link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap-theme.min.css">
     <?php
-        require_once 'heap.php';
+        require_once 'include/heap.php';
     ?>
 </head>
 <body>
 	<div class="container">
         <?php //$this->renderPartier('layout/sidebar');
-        require_once 'header.php';
+        require_once 'include/header.php';
         ?>
 		<div class="row">
 			<div class="col-sm-4">
 				<?php //$this->renderPartier('layout/sidebar');
-					require_once 'sidebar.php';
+					require_once 'include/sidebar.php';
 				?>
 
 			</div>
@@ -37,7 +37,7 @@
 	<script src="/public/js/jquery-3.2.1.min.js"></script>
 	<script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
     <?php
-        require_once 'footer.php';
+        require_once 'include/footer.php';
     ?>
 </body>
 </html>

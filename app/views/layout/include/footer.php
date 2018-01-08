@@ -7,5 +7,5 @@
 <!--Script Time-->
 <script rel="script" src="app/views/layout/js/time.js"></script>
 <!--Animation-->
-<script src="wow-animation/wow-animation/wow.min.js"></script>
+<script src="../wow-animation/wow-animation/wow.min.js"></script>
 <script>new WOW().init();</script>
