@@ -4,6 +4,7 @@
 	</div>
 	<div class="panel-body">
 		<?php 
+		$i=1;
 				foreach ($data['book'] as $key => $value) {
 					$id = $value['id_book']; 
 		 ?>
@@ -12,6 +13,12 @@
 			<h5><?php echo $value['name'] ?></h5>
 		</div>
 
-		<?php } ?>
+		<?php 
+		if($i % 4==0){
+			echo '<div class="clearfix"></div>';
+		}
+		$i++;
+
+			} ?>
 	</div>
 </div>
