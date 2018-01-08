@@ -5,7 +5,7 @@
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="logo-header">
                 <a href="#">
                     <div  id="logo-img">
-                        <img src="app/views/layout/assets/img/icon/logo.svg">
+                        <img src="/app/views/layout/assets/img/icon/logo.svg">
                     </div>
                     <div id="name-school">
                         <h3>Nhóm newbie <br> Bách Khoa Đà Nẵng</h3>
@@ -37,38 +37,29 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="menu">
-                            <li class="active"><a href="#"><i class="fa fa-home fa-2x"></i></a></li>
+                            <li class="active"><a href="/"><i class="fa fa-home fa-2x"></i></a></li>
                             <li><a href="#">Giới thiệu</a>
                                 <ul class="submenu">
                                     <li><a href="#">Giới thiệu về chúng tôi</a></li>
                                     <li><a href="#">các loại sách</a></li>
                                 </ul>
                             </li>
-                            <li class="active"><a href="#">Kinh tế</a>
+                            <?php foreach ($data['catParents'] as $catParent) {
+                                $id_cat = $catParent['id_cat'];
+                                $name = $catParent['name'];
+                             ?>
+                            <li class="active"><a href="/cat/<?php echo $id_cat ?>"><?php echo $name; ?></a>
                                 <ul class="submenu">
-                                    <li><a href="#">Kinh tế truyền thống</a></li>
-                                    <li><a href="#">Nghệ thuật bán hàng</a></li>
-                                    <li><a href="#">Khởi nghiệp</a></li>
-                                    <li><a href="#">Người thành công</a></li>
+                                 <?php
+                                    foreach ($data['catChilds'] as $catChild) {
+                                        if($catChild['parent_id'] == $catParent['id_cat']){
+
+                                ?>   
+                                    <li><a href="/cat/<?php echo $catChild['id_cat']; ?>"><?php echo $catChild['name']; ?></a></li>
+                                 <?php } } ?>   
                                 </ul>
                             </li>
-                            <li><a href="#">Văn Học</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Thơ đường luật</a></li>
-                                    <li><a href="#">Truyện tranh</a></li>
-                                    <li><a href="#">Ngôn tình</a></li>
-                                    <li><a href="#">Học đường</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Truyện</a>
-                                <ul class="submenu">
-                                    <li><a href="#">ngôn tình</a></li>
-                                    <li><a href="#">Học đường</a></li>
-                                    <li><a href="#">Kinh dị</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Kĩ năng sống</a></li>
-                            <li><a href="#">Học tiếng anh</a></li>
+                            <?php } ?>
                             <li><a href="#">Liên hệ</a></li>
 
                         </ul>
@@ -82,7 +73,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2" id="time">
                 <div class="below_body">
-                    <div id="clock">Loading...</div>
+                    <div><?php echo date('d-m-Y') ?></div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-7 col-md-9 col-lg-9" id="welcome">

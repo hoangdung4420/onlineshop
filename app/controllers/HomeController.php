@@ -19,13 +19,19 @@
 
 		function index()
 		{
-			$result = Book::getAll();
-			$cat = Category::getAll();
+			$arNewBooks = Book::getNewBook();
+			$catParents = Category::getCatParent();
+			$catChilds = Category::getCatChild();
 
-			/*echo "<pre>";
-			print_r($cat);
-			die();*/
-			$this->render('index',['book'=>$result,'cat'=>$cat]);
+			foreach ($catParents as $value) {
+				$arCatBooks[$value['name']] = Book::getCatBook($value['id_cat']);
+			}
+
+			$contact = About::getContact();
+			//echo $contact[0]['detail'];
+			/*echo '<pre>';
+			print_r($contact);*/
+			$this->render('index',['arNewBooks'=>$arNewBooks,'arCatBooks'=>$arCatBooks,'catParents'=>$catParents, 'catChilds' => $catChilds,'contact' => $contact ]);
 
 			/*$result=QueryBuilder::table('abouts')->select('id_about','title','detail')->get();*/
 			/*$sql="delete from abouts where id_about=12";
@@ -36,13 +42,17 @@
 			/*$sql="insert into abouts (title,detail) VALUES ('b','c')";
 			echo $re =QueryBuilder::table('abouts')->inserts($sql);*/
 
-		}
+		} 
 
-		function getCat()
+		function getCat($id)
 		{
-			$arCat =['a'];
-			new About;
-			$this->render('cat.index',$arCat);
+			$catParents = Category::getCatParent();
+			$catChilds = Category::getCatChild();
+
+			$arCatBooks = Book::getCatBookAll($id);
+
+			$contact = About::getContact();
+			$this->render('cat',['arCatBooks'=>$arCatBooks,'catParents'=>$catParents, 'catChilds' => $catChilds,'contact' => $contact ]);
 		}
 	}
 

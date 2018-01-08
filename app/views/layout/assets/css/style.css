@@ -190,3 +190,30 @@ main{
   -moz-animation: spinX 0.5s;
   animation: spinX 0.5s;
 }
+.btn-danger{
+  padding: 15px;
+  font-size: 15px;
+  background: #e17471;
+  border: 1px solid #e17471;
+  color: #fff;
+}
+.danger{
+   font-size: 15px;
+}
+.book{
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.book-big{
+  padding-bottom: 75px;
+  padding-top: 75px;
+
+}
+.book:hover{
+  border: 2px solid #333;
+
+}
+.panel-title{
+  font-size: 20px;
+  text-transform: uppercase;
+}

@@ -2,7 +2,7 @@
 use app\core\controller;
 use app\core\QueryBuilder;
 Router::get('/', 'HomeController@index');
-Router::get('/cat', 'HomeController@getCat');
+Router::get('/cat/{id}', 'HomeController@getCat');
 
 Router::get('/sidebar', function(){
 	/*$ct = new Controller;
