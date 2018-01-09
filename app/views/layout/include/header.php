@@ -60,7 +60,7 @@
                                 </ul>
                             </li>
                             <?php } ?>
-                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="/contact">Liên hệ</a></li>
 
                         </ul>
                     </div><!-- /.navbar-collapse -->

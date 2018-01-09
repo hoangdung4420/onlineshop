@@ -10,8 +10,8 @@
 				$id = $value['id_book']; 
 		 ?>
 		<div class="col-md-3 book">
-			<a href=""><img src="/app/views/public/images/<?php echo $value['picture'] ?>" alt="" class="img-responsive" /></a>
-			<h4 class="text-primary text-center title-book"><a href=""><?php echo $value['name'] ?></a></h4>
+			<a href="/book/detail/<?php echo $id ?>"><img src="/app/views/public/images/<?php echo $value['picture'] ?>" alt="" class="img-responsive" /></a>
+			<h4 class="text-primary text-center title-book"><a href="/book/detail/<?php echo $id ?>"><?php echo $value['name'] ?></a></h4>
 			<h4 class="text-center"><?php echo $value['unit_price'] ?> $</h4>
 			<p class="btn btn-danger btn-block"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ hàng</p>
 		</div>

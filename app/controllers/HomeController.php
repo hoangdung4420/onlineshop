@@ -52,13 +52,23 @@
 			$arCatBooks = Book::getCatBookAll($id);
 			$oItem = Category::find($id);
 			
-			$contact = About::getContact($id);
+			$contact = About::getContact();
 			$this->render('cat',['oItem'=>$oItem[0],'arCatBooks'=>$arCatBooks,'catParents'=>$catParents, 'catChilds' => $catChilds,'contact' => $contact ]);
 		}
 
-		function Cat($name,$id)
+		function getContact()
 		{
+			$contact = About::getContact();
+			$catParents = Category::getCatParent();
+			$catChilds = Category::getCatChild();
+			$this->render('contact', ['catParents'=>$catParents,'catChilds' => $catChilds,'contact' => $contact]);
+		}
+		function getBook($id){
 
+			$contact = About::getContact();
+			$catParents = Category::getCatParent();
+			$catChilds = Category::getCatChild();
+			$this->render('book', ['catParents'=>$catParents,'catChilds' => $catChilds,'contact' => $contact]);
 		}
 	}
 
