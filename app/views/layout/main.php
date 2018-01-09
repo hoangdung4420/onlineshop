@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>shopbook</title>
 	
     <?php
         require_once 'include/heap.php';

@@ -74,6 +74,7 @@ class Router
 			}elseif( strpos($url, '}') === FALSE ){
 				continue;
 			}else{
+
 				$routeParams 	= explode('/', $url);
 				$requestParams 	= explode('/', $requestUrl);
 				if( count($routeParams) !== count($requestParams) ){
@@ -85,7 +86,6 @@ class Router
 						$params[] = $requestParams[$k];
 					}
 				}
-
 
 				$checkRoute = true;
 			}
@@ -113,7 +113,7 @@ class Router
 			$methodName = explode('@', $action)[1];
 
 			$classNamespace = 'app\\controllers\\'.$className;
-			
+
 			if( class_exists($classNamespace) ){
 
 				$object = new $classNamespace;
