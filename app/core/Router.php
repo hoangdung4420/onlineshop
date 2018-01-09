@@ -79,11 +79,14 @@ class Router
 				if( count($routeParams) !== count($requestParams) ){
 					continue;
 				}
+
 				foreach( $routeParams as $k => $rp ){
 					if( preg_match('/^{\w+}$/',$rp) ){
 						$params[] = $requestParams[$k];
 					}
 				}
+
+
 				$checkRoute = true;
 			}
 
@@ -110,12 +113,14 @@ class Router
 			$methodName = explode('@', $action)[1];
 
 			$classNamespace = 'app\\controllers\\'.$className;
+			
 			if( class_exists($classNamespace) ){
 
 				$object = new $classNamespace;
 				App::setController($className);
 				if( method_exists($classNamespace, $methodName) ){
 					App::setAction($methodName);
+
 					call_user_func_array([$object,$methodName], $params);
 				}else{
 					die('Method "'.$methodName.'" not found');
