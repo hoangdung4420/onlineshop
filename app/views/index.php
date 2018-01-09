@@ -12,7 +12,7 @@
 		 ?>
 		<div class="col-md-3 book">
 			<a href=""><img src="app/views/public/images/<?php echo $value['picture'] ?>" alt="" class="img-responsive" /></a>
-			<h4 class="text-primary text-center"><a href=""><?php echo $value['name'] ?></a></h4>
+			<h4 class="text-primary text-center title-book"><a href=""><?php echo $value['name'] ?></a></h4>
 			<h4 class="text-center"><?php echo $value['unit_price'] ?> $</h4>
 			<p class="btn btn-danger btn-block"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ hàng</p>
 		</div>
@@ -40,7 +40,7 @@
 				 ?>
 				 <div>
 				 	<a href=""><img src="app/views/public/images/<?php echo $oItem['picture'] ?>" alt="" class="img-responsive" /></a>
-					<h4 class="text-primary text-center"><a href=""><?php echo $oItem['name'] ?></a></h4>
+					<h4 class="text-primary text-center title-book"><a href=""><?php echo $oItem['name'] ?></a></h4>
 					<h4 class="text-center"><?php echo $oItem['unit_price'] ?> $</h4>
 					<p class="btn btn-danger btn-block danger"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ hàng</p>
 				 </div>
@@ -53,7 +53,7 @@
 				 ?>
 				<div class="col-md-4 col-sm-6 book">
 					<a href="" ><img src="app/views/public/images/<?php echo $val['picture'] ?>" alt="" class="img-responsive" /></a>
-					<h4 class="text-primary text-center"><a href=""><?php echo $val['name'] ?></a></h4>
+					<h4 class="text-primary text-center title-book"><a href=""><?php echo $val['name'] ?></a></h4>
 					<h4 class="text-center"><?php echo $val['unit_price'] ?> $</h4>
 					<p class="btn btn-danger btn-block"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ hàng</p>
 				</div>

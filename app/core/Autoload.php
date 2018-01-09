@@ -15,7 +15,9 @@
 			
 			$fileName = $ar[$count-1];
 			
-			$filePath = $this->rootDir.'\\'.strtolower(str_replace($fileName, '', $class)).$fileName.'.php';
+			$class = str_replace('\\', '/', $class);
+		 $filePath = $this->rootDir.'/'.strtolower(str_replace($fileName, '', $class)).$fileName.'.php';
+			
 			if( file_exists($filePath) ){
 				require_once($filePath);
 			}else{

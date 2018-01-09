@@ -55,6 +55,11 @@
 			$contact = About::getContact($id);
 			$this->render('cat',['oItem'=>$oItem[0],'arCatBooks'=>$arCatBooks,'catParents'=>$catParents, 'catChilds' => $catChilds,'contact' => $contact ]);
 		}
+
+		function Cat($name,$id)
+		{
+
+		}
 	}
 
  ?>

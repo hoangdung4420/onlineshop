@@ -1,5 +1,5 @@
 <?php 
-use app\core\controller;
+use app\core\Controller;
 use app\core\QueryBuilder;
 Router::get('/', 'HomeController@index');
 Router::get('/cat/{id}', 'HomeController@getCat');
