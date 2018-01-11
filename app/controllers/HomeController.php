@@ -63,12 +63,33 @@
 			$catChilds = Category::getCatChild();
 			$this->render('contact', ['catParents'=>$catParents,'catChilds' => $catChilds,'contact' => $contact]);
 		}
+
+		function postContact()
+		{
+			$fullname = $_POST['fullname'];
+			$email = $_POST['email'];
+			$phone = $_POST['phone'];
+			$subject = $_POST['subject'];
+			$content = $_POST['content'];
+
+			$sql="insert into contacts (fullname,email,phone,subject,content) values ('".$fullname."','".$email."','".$phone."','".$subject."','".$content."')";
+			$re =QueryBuilder::table('contacts')->inserts($sql);
+			if($re){
+				echo "Thành công";
+				//$this->getContact();
+			}else{
+				echo "Có lỗi xảy ra";
+			}
+		}
 		function getBook($id){
 
+			$arCats = Category::getAll();
+			/*echo '<pre>';
+			var_dump($arCats);*/
 			$contact = About::getContact();
 			$catParents = Category::getCatParent();
 			$catChilds = Category::getCatChild();
-			$this->render('book', ['catParents'=>$catParents,'catChilds' => $catChilds,'contact' => $contact]);
+			$this->render('book', ['catParents'=>$catParents,'catChilds' => $catChilds,'contact' => $contact,'arCats' => $arCats]);
 		}
 	}
 

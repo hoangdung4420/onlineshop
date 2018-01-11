@@ -4,7 +4,8 @@
 */
 namespace App\models;
 use app\core\QueryBuilder;
-class Book 
+use app\core\Model;
+class Book extends Model
 {
 	function getNewBook(){
 		$sql="select * from books where active = 1 order by id_book DESC limit 4";

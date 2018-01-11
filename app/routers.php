@@ -4,6 +4,7 @@ use app\core\QueryBuilder;
 Router::get('/', 'HomeController@index');
 Router::get('/cat/{id}', 'HomeController@getCat');
 Router::get('/contact', 'HomeController@getContact');
+Router::post('/contact', 'HomeController@postContact');
 Router::get('/book/detail/{id}', 'HomeController@getBook');
 
 Router::get('/sidebar', function(){
