@@ -38,11 +38,9 @@ class QueryBuilder
 		    $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    //echo "Connection ok: " ;
 
-		    }
-		catch(PDOException $e)
-		    {
+		}catch(PDOException $e) {
 		    echo "Connection failed: " . $e->getMessage();
-		    }
+		}
 
 
 	}

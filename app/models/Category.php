@@ -4,9 +4,15 @@
 */
 namespace App\models;
 use app\core\QueryBuilder;
+use app\core\Model;
 
-class Category 
+class Category extends Model
 {
+
+	function __construct()
+	{
+		$this->tableName = 'categories';
+	}
 	function getAll(){
 		$sql="select * from categories";
 		return QueryBuilder::table('categories')->selects($sql);
